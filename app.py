@@ -5,11 +5,8 @@ import matplotlib.pyplot as plt
 import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
 
-# 한글 폰트 설정
-font_path = 'C:/Windows/Fonts/malgun.ttf'  # 말랑한 Malgun Gothic (윈도우 기본)
-font_name = fm.FontProperties(fname=font_path).get_name()
-plt.rc('font', family=font_name)
-
+plt.rcParams['font.family'] = 'DejaVu Sans'
+plt.rcParams['axes.unicode_minus'] = False
 # 마이너한 깨짐 방지
 plt.rcParams['axes.unicode_minus'] = False
 
