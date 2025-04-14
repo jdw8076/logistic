@@ -5,10 +5,20 @@ import matplotlib.pyplot as plt
 import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
 
-plt.rcParams['font.family'] = 'DejaVu Sans'
-plt.rcParams['axes.unicode_minus'] = False
-# 마이너한 깨짐 방지
-plt.rcParams['axes.unicode_minus'] = False
+import matplotlib.pyplot as plt
+import matplotlib.font_manager as fm
+import os
+
+# ✅ 일본어 지원 폰트 (Streamlit Cloud에서도 사용 가능하게)
+font_path = os.path.join("fonts", "NotoSansJP-VariableFont_wght.ttf")
+if os.path.exists(font_path):
+    font_prop = fm.FontProperties(fname=font_path)
+    plt.rcParams["font.family"] = font_prop.get_name()
+else:
+    plt.rcParams["font.family"] = "DejaVu Sans"  # fallback
+
+plt.rcParams["axes.unicode_minus"] = False
+
 
 
 # Load and preprocess data
